@@ -1,0 +1,29 @@
+<!-- Ejercicio 1: Cambiar el texto de un elemento
+Crea una función que cambie el contenido de un elemento de texto cuando se haga clic en un botón.
+
+Enunciado:
+En una página HTML, tendrás un elemento <p> con un id "texto".
+Al hacer clic en un botón con el id "cambiarTexto", cambia el contenido del <p> para que diga "Texto actualizado". -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 - DOM</title>
+  </head>
+  <body>
+    <p id="texto">Texto original</p>
+    <button id="cambiarTexto">Cambiar texto</button>
+
+    <script>
+      // Obtener el botón y el párrafo
+      const boton = document.getElementById("cambiarTexto");
+      const texto = document.getElementById("texto");
+
+      // Agregar el evento de clic
+      boton.addEventListener("click", function () {
+        texto.textContent = "Texto actualizado"; // Cambiar el texto
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!-- Ejercicio 2: Agregar un nuevo elemento a la lista
+Crea una función que agregue un nuevo elemento <li> a una lista <ul> cuando se haga clic en un botón.
+
+Enunciado:
+En una página HTML, tendrás una lista desordenada (<ul>) con el id "lista".
+Al hacer clic en un botón con el id "agregarElemento", agrega un nuevo elemento <li> a la lista con el texto "Nuevo Elemento". -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2 - DOM</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+    </ul>
+    <button id="agregarElemento">Agregar Elemento</button>
+
+    <script>
+      // Obtener el botón y la lista
+      const boton = document.getElementById("agregarElemento");
+      const lista = document.getElementById("lista");
+
+      // Agregar el evento de clic
+      boton.addEventListener("click", function () {
+        const nuevoElemento = document.createElement("li"); // Crear el nuevo <li>
+        nuevoElemento.textContent = "Nuevo Elemento"; // Asignar el texto
+        lista.appendChild(nuevoElemento); // Agregar el nuevo <li> a la lista
+      });
+    </script>
+  </body>
+</html>

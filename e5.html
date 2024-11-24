@@ -1,0 +1,30 @@
+<!-- Ejercicio 5: Cambiar una imagen
+Crea una función que cambie la imagen mostrada en una página al hacer clic en un botón.
+
+Enunciado:
+En una página HTML, tendrás una imagen con el id "imagen".
+Al hacer clic en un botón con el id "cambiarImagen", cambia la imagen por otra. -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5 - DOM</title>
+  </head>
+  <body>
+    <img id="imagen" src="imagen1.jpg" alt="Imagen original" width="200" />
+    <button id="cambiarImagen">Cambiar imagen</button>
+
+    <script>
+      // Obtener el botón y la imagen
+      const boton = document.getElementById("cambiarImagen");
+      const imagen = document.getElementById("imagen");
+
+      // Agregar el evento de clic
+      boton.addEventListener("click", function () {
+        imagen.src = "imagen2.jpg"; // Cambiar la fuente de la imagen
+        imagen.alt = "Imagen cambiada"; // Cambiar el texto alternativo
+      });
+    </script>
+  </body>
+</html>

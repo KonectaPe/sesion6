@@ -1,0 +1,42 @@
+<!-- Ejercicio 2: Obtener un post de la API y mostrarlo
+Crea una función que obtenga un post específico de la API y lo muestre en la página.
+
+Enunciado:
+Utiliza el método fetch para obtener un post de la API pública https://jsonplaceholder.typicode.com/posts/1.
+Muestra el título y el cuerpo del post en la página. -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2 - Fetch</title>
+  </head>
+  <body>
+    <h2 id="tituloPost"></h2>
+    <p id="cuerpoPost"></p>
+    <button id="cargarPost">Cargar Post</button>
+
+    <script>
+      // Obtener el botón y los elementos de la página
+      const boton = document.getElementById("cargarPost");
+      const tituloPost = document.getElementById("tituloPost");
+      const cuerpoPost = document.getElementById("cuerpoPost");
+
+      // Función para cargar el post
+      function cargarPost() {
+        fetch("https://jsonplaceholder.typicode.com/posts/1") // Obtener el post con ID 1
+          .then((response) => response.json()) // Convertir la respuesta a JSON
+          .then((data) => {
+            // Mostrar el título y cuerpo del post
+            tituloPost.textContent = data.title;
+            cuerpoPost.textContent = data.body;
+          })
+          .catch((error) => console.log("Error al cargar el post:", error));
+      }
+
+      // Agregar el evento de clic para cargar el post
+      boton.addEventListener("click", cargarPost);
+    </script>
+  </body>
+</html>

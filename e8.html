@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Viewer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .pokemon {
+        margin: 20px auto;
+        width: 200px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mi Pokedex</h1>
+    <div id="pokemon-info">
+      <h2 id="pokemon-name">Loading...</h2>
+      <img id="pokemon-image" class="pokemon" src="" alt="Pokémon Image" />
+      <p id="pokemon-id"></p>
+    </div>
+    <button id="previous-button">Anterior</button>
+    <button id="next-button">Siguiente</button>
+    <script src="e8.js"></script>
+  </body>
+</html>

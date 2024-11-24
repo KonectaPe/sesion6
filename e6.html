@@ -1,0 +1,48 @@
+<!-- Ejercicio 1: Obtener datos de una API y mostrarlos en una lista
+Crea una función que obtenga una lista de usuarios desde una API (como JSONPlaceholder) y los muestre en una lista HTML.
+
+Enunciado:
+Utiliza el método fetch para obtener datos de la API pública https://jsonplaceholder.typicode.com/users.
+Muestra el nombre de cada usuario en una lista desordenada (<ul>). -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 - Fetch</title>
+  </head>
+  <body>
+    <ul id="usuarios"></ul>
+    <button id="cargarUsuarios">Cargar Usuarios</button>
+
+    <script>
+      // Obtener el botón y la lista
+      const boton = document.getElementById("cargarUsuarios");
+      const lista = document.getElementById("usuarios");
+
+      // Función para cargar los usuarios
+      function cargarUsuarios() {
+        // Usar fetch para obtener datos de la API
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((response) => response.json()) // Convertir la respuesta a JSON
+          .then((data) => {
+            // Limpiar la lista antes de agregar los nuevos elementos
+            lista.innerHTML = "";
+
+            // Recorrer los usuarios y agregar un <li> para cada uno
+            data.forEach((usuario) => {
+              const li = document.createElement("li");
+              li.textContent = usuario.name;
+              lista.appendChild(li);
+            });
+          })
+          .catch((error) =>
+            console.log("Error al cargar los usuarios:", error)
+          );
+      }
+
+      // Agregar el evento de clic para cargar los usuarios
+      boton.addEventListener("click", cargarUsuarios);
+    </script>
+  </body>
+</html>

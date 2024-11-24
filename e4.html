@@ -1,0 +1,28 @@
+<!-- Ejercicio 4: Mostrar un mensaje al hacer clic en un elemento
+Crea una función que muestre un mensaje en la consola al hacer clic en un elemento.
+
+Enunciado:
+En una página HTML, tendrás un elemento <div> con el id "mensaje".
+Al hacer clic en el <div>, muestra un mensaje en la consola que diga "¡Elemento clickeado!". -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4 - DOM</title>
+  </head>
+  <body>
+    <div id="mensaje">Haz clic aquí</div>
+
+    <script>
+      // Obtener el elemento div
+      const mensaje = document.getElementById("mensaje");
+
+      // Agregar el evento de clic
+      mensaje.addEventListener("click", function () {
+        console.log("¡Elemento clickeado!"); // Mostrar mensaje en la consola
+      });
+    </script>
+  </body>
+</html>
